@@ -27,6 +27,9 @@ public class FlowMainController {
     private  Button deletebutton;
 
     @FXML
+    private  Button SearchButton;
+
+    @FXML
     private Label MessageLabel; // message label to display button messages
 
 
