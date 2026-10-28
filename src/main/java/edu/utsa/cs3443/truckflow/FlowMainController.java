@@ -111,6 +111,12 @@ public class FlowMainController {
         stage.setTitle("Add Expense screen");
     }
 
+        Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+        Stage stage = (Stage) addbutton.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Update Expense screen");
+    }
 
 
 }
