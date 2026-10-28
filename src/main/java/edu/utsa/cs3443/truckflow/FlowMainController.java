@@ -99,6 +99,8 @@ public class FlowMainController {
 
         // if the edit button was clicked again return a screen with prefilled info of the expense that was selected
 
+        // call the function onEditButtonClick
+
     }
 
     // make the add button switch screens
