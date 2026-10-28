@@ -122,4 +122,15 @@ public class FlowMainController {
     }
 
 
+    public void onSearchButtonCLick() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/updateExpense.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+        Stage stage = (Stage) editbutton.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Search Expense screen");
+    }
+
 }
