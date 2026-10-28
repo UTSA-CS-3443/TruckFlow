@@ -56,7 +56,7 @@
                   <Font size="64.0" />
                </font>
             </Label>
-            <Button fx:id="addbutton" layoutX="714.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" text="add " />
+            <Button fx:id="addbutton" layoutX="714.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddbuttonClick" prefHeight="32.0" prefWidth="114.0" text="add " />
             <Button fx:id="editbutton" layoutX="894.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editExpense" prefHeight="32.0" prefWidth="32.0" text="edit icon( update)" />
             <Button fx:id="deletebutton" layoutX="1064.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteExpense" prefHeight="32.0" prefWidth="26.0" text="delete Icon( delete) " />
             <Button layoutX="1174.0" layoutY="12.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" text="Search Icon" />

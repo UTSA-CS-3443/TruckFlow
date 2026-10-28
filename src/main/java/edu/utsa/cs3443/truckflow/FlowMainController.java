@@ -4,11 +4,14 @@ import edu.utsa.cs3443.truckflow.model.Expense;
 import edu.utsa.cs3443.truckflow.model.expenseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -93,7 +96,21 @@ public class FlowMainController {
 
         // if the edit button was clicked again return a screen with prefilled info of the expense that was selected
 
-
     }
+
+    // make the add button switch screens
+    public void onAddbuttonClick()throws IOException{
+
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/addExpense.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+        Stage stage = (Stage) addbutton.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Add Expense screen");
+    }
+
+
 
 }
