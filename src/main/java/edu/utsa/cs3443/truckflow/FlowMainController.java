@@ -1,0 +1,99 @@
+package edu.utsa.cs3443.truckflow;
+
+import edu.utsa.cs3443.truckflow.model.Expense;
+import edu.utsa.cs3443.truckflow.model.expenseManager;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
+import java.time.LocalDate;
+
+public class FlowMainController {
+    // dashboard buttons
+    private static final expenseManager coordinator = new expenseManager();
+    @FXML
+    private Button addbutton;
+    @FXML
+    private Button editbutton;
+    @FXML
+    private  Button deletebutton;
+
+    @FXML
+    private Label MessageLabel; // message label to display button messages
+
+
+
+    // tableView stuff
+    @FXML
+    private TableView<Expense> expenseTable;
+
+//    @FXML save for later
+//    private TableColumn<Expense, Integer> idColumn;
+
+    @FXML
+    private TableColumn<Expense, LocalDate> dateColumn;
+
+    @FXML
+    private TableColumn<Expense, String> categoryColumn;
+
+    @FXML
+    private TableColumn<Expense, String> descriptionColumn;
+
+    @FXML
+    private TableColumn<Expense, Double> amountColumn;
+
+    @FXML
+    private TableColumn<Expense, String> paymentMethod;
+
+    @FXML
+    private TableColumn<Expense, String> Notes;
+
+    @FXML
+    public void initialize() throws IOException {
+        dateColumn.setCellValueFactory(
+                new PropertyValueFactory<>("date"));
+
+        categoryColumn.setCellValueFactory(
+                new PropertyValueFactory<>("category"));
+
+        descriptionColumn.setCellValueFactory(
+                new PropertyValueFactory<>("description"));
+
+        amountColumn.setCellValueFactory(
+                new PropertyValueFactory<>("amount"));
+
+        paymentMethod.setCellValueFactory(
+                new PropertyValueFactory<>("payment_Method"));
+
+        Notes.setCellValueFactory(
+                new PropertyValueFactory<>("notes"));
+
+        coordinator.loadExpenses();
+        System.out.println("Expenses loaded: "
+                + coordinator.getExpense().size());
+        expenseTable.getItems().setAll(coordinator.getExpense());
+    }
+
+
+    @FXML
+    public void deleteExpense(){
+        MessageLabel.setText("Hello from delete"); // makes label apperar on the place that we placed it
+
+        // if the delete button was clicked again delete a expense of the selected table
+    }
+
+    @FXML
+    public void editExpense(){
+        MessageLabel.setText("Hello from edit"); // makes label apperar on the place that we placed it
+
+        // if the edit button was clicked again return a screen with prefilled info of the expense that was selected
+
+
+    }
+
+}
