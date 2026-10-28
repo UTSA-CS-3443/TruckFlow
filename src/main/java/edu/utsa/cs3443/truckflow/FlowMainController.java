@@ -91,6 +91,8 @@ public class FlowMainController {
         MessageLabel.setText("Hello from delete"); // makes label apperar on the place that we placed it
 
         // if the delete button was clicked again delete a expense of the selected table
+
+
     }
 
     @FXML
