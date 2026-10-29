@@ -39,6 +39,10 @@ public class addExpenseController {
 
 
     // method for cancel button to go back to the ExpenseDashboard.fxml
+    public void initialize() throws IOException {
+
+
+}
 
     public void onCancelButton()throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
