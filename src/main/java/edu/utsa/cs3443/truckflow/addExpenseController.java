@@ -21,5 +21,23 @@ public class addExpenseController {
     @FXML
     private TextField Notes;
 
-  
+
+
+    // method for cancel button to go back to the ExpenseDashboard.fxml
+
+    public void onCancelButton()throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/expenseDashboard.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Update Expense screen");
+
+
+
+
+    }
+    
 }
