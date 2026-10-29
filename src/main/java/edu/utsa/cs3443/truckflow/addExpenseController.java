@@ -39,5 +39,34 @@ public class addExpenseController {
 
 
     }
-    
+public void onExpenseAdd(){
+
+// start getting the input from the user
+
+    LocalDate datepicker = date.getValue();
+    String categoryInput = categoryText.getText();
+    String descriptionInput = descriptionText.getText();
+    String amountInput = amountText.getText();
+    String paymentInput = paymentType.getText();
+    String notesInput = Notes.getText();
+    // assgin variables to input feilds
+
+    // check if user has inputed all the required inputs to do it later
+
+    Expense newExpense = new Expense(datepicker,categoryInput,descriptionInput,Double.parseDouble(amountInput),paymentInput,notesInput); // call the constructor and pass the assgined variables to it
+
+    // add the new expenses to the arrayList
+    expenseList.addExpense(newExpense);
+
+
+
+
+
+
 }
+
+
+
+
+
+    }
