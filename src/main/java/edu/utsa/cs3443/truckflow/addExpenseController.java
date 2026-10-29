@@ -35,6 +35,7 @@ public class addExpenseController {
     @FXML
     private TextField Notes;
 
+    private expenseManager expenseList= new expenseManager();
 
 
     // method for cancel button to go back to the ExpenseDashboard.fxml
