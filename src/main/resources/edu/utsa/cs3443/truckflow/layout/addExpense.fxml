@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.addExpenseController">
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.addExpenseController">
    <children>
-      <Button layoutX="248.0" layoutY="161.0" mnemonicParsing="false" text="Button" />
+      <Label layoutX="105.0" layoutY="55.0" text="Add Expense ">
+         <font>
+            <Font size="64.0" />
+         </font></Label>
+      <Button layoutX="53.0" layoutY="831.0" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" text="Cancel " />
+      <Button layoutX="1447.0" layoutY="810.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Add Expense" />
+      <DatePicker layoutX="151.0" layoutY="193.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField layoutX="151.0" layoutY="244.0" prefHeight="25.0" prefWidth="222.0" promptText="Category" />
+      <TextField layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" promptText="Description" />
+      <TextField layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" promptText="\$Amount" />
+      <TextField layoutX="151.0" layoutY="445.0" prefHeight="25.0" prefWidth="222.0" promptText="Payment Type" />
+      <TextField layoutX="151.0" layoutY="505.0" prefHeight="25.0" prefWidth="222.0" promptText="Notes" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
