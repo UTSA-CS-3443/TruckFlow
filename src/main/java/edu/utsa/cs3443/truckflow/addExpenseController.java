@@ -1,5 +1,19 @@
 package edu.utsa.cs3443.truckflow;
 
+import edu.utsa.cs3443.truckflow.model.Expense;
+import edu.utsa.cs3443.truckflow.model.expenseManager;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.time.LocalDate;
+
+
 public class addExpenseController {
 
 // buttons on the screen
