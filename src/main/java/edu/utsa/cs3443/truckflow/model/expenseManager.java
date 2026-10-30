@@ -276,7 +276,9 @@ public void filterByDateRange(Scanner scan){                                    
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] expenseData = line.split(",", -1);
-
+            if (line.trim().isEmpty()) {
+                continue;
+            }
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             // add a if statement to check if no column is empty
             if (expenseData.length < 6 || expenseData[0].trim().isEmpty()) {
