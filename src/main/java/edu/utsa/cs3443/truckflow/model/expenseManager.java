@@ -259,7 +259,11 @@ public void filterByDateRange(Scanner scan){                                    
     // delete expense
 
     // update expense
-
+   public void updateExpense(Expense expense)throws  IOException{
+        if(this.expense.contains(expense)){
+            saveDataToFile();
+        }
+   }
     //filter by category methods
 
     public  void loadExpenses() throws IOException {
