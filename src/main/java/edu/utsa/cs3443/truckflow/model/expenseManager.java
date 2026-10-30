@@ -278,7 +278,10 @@ public void filterByDateRange(Scanner scan){                                    
             String[] expenseData = line.split(",", -1);
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
+            // add a if statement to check if no column is empty
+            if (expenseData.length < 6 || expenseData[0].trim().isEmpty()) {
+                continue;
+            }
             Expense newExpense = new Expense(
                     LocalDate.parse(expenseData[0], formatter), // Date
                     expenseData[1],                             // Category
