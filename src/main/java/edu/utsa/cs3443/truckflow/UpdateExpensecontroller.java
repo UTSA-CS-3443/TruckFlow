@@ -31,6 +31,16 @@ public class UpdateExpensecontroller {
 
 
 
+public void setExpenses(Expense expense){
+    // use getters to populate feilds on the fields for the screen
+    date.setValue(expense.getDate());
+    categoryText.setText(expense.getCategory());
+    descriptionText.setText(expense.getDescription());
+    amountText.setText(String.valueOf(expense.getAmount()));
+    paymentType.setText(expense.getPayment_Method());
+    Notes.setText(expense.getNotes());
+
+}
 
 
 
