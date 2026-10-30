@@ -117,7 +117,7 @@ public class FlowMainController {
         stage.setScene(scene);
         stage.setTitle("Add Expense screen");
     }
-    public void onEditButtonClick() throws IOException{
+    public void onEditButtonClick(Expense selectedExpense) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(
                 TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/updateExpense.fxml"));
 
