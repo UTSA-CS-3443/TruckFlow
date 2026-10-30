@@ -66,6 +66,8 @@ public void setExpenses(Expense expense){
         stage.setScene(scene);
         stage.setTitle("Update Expense screen");
 
+            // Save the updated expenses
+            expenseList.updateExpense(selectedExpense);
 
 
 
