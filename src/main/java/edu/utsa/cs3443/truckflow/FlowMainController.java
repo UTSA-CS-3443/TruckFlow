@@ -96,9 +96,23 @@ public class FlowMainController {
     }
 
     @FXML
-    public void editExpense(){
-        MessageLabel.setText("Hello from edit"); // makes label apperar on the place that we placed it
-
+    public void editExpense() throws IOException {
+        // Check if an expense was selected
+        if (!clickedButton) {
+            clickedButton = true;
+            MessageLabel.setText("Please select an expense from the table to update.");// makes label apperar on the place that we placed it
+            return;
+        }
+        // to make user select a expense from table
+        Expense selectedExpense = expenseTable
+                .getSelectionModel()
+                .getSelectedItem();
+        if(selectedExpense ==null){
+        MessageLabel.setText("Please select a record first ");
+        return;
+        }
+        clickedButton = false;
+        onEditButtonClick(selectedExpense); // call the function onEditButtonClick
         // if the edit button was clicked again return a screen with prefilled info of the expense that was selected
 
         // call the function onEditButtonClick
