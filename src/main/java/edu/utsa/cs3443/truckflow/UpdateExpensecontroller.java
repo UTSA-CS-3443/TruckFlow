@@ -103,4 +103,22 @@ public void setExpenses(Expense expense){
 
 
     }
-}
+
+    private void switchUpdateScreen()throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/expenseDashboard.fxml"));
+
+        Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+        Stage stage = (Stage) updateExpensebutton.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Expense Dashboard");
+
+    }
+
+
+
+
+
+    }
+
