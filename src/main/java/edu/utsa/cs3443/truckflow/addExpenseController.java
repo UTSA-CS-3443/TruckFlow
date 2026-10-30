@@ -71,8 +71,24 @@ public void onExpenseAdd(){
     // assgin variables to input feilds
 
     // check if user has inputed all the required inputs to do it later
-
-    Expense newExpense = new Expense(datepicker,categoryInput,descriptionInput,Double.parseDouble(amountInput),paymentInput,notesInput); // call the constructor and pass the assgined variables to it
+  if(date.getValue() == null){
+      errorLabel.setText("Please enter a valid date");
+      return;
+  } else if (categoryText.getText().isEmpty()) {
+      errorLabel.setText("Please enter a input for a category");
+      return;
+  } else if (descriptionText.getText().isEmpty()) {
+      errorLabel.setText("Pelase enter a input for a description ");
+      return;
+  } else if (amountText.getText().isEmpty()) {
+    errorLabel.setText("Please enter a amount paid ");
+    return;
+  } else if (paymentType.getText().isEmpty()) {
+      errorLabel.setText("Please enter a payment Type that the expense was paid with ");
+      return;
+  } else {
+        // if not null create and add a expense
+        Expense newExpense = new Expense(datepicker, categoryInput, descriptionInput, Double.parseDouble(amountInput), paymentInput, notesInput); // call the constructor and pass the assgined variables to it
 
     // add the new expenses to the arrayList
     expenseList.addExpense(newExpense);
