@@ -32,7 +32,7 @@ public class FlowMainController {
     @FXML
     private Label MessageLabel; // message label to display button messages
 
-
+private boolean clickedButton = false;
 
     // tableView stuff
     @FXML
