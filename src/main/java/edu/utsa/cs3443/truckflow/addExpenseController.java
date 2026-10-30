@@ -90,9 +90,9 @@ public void onExpenseAdd(){
         // if not null create and add a expense
         Expense newExpense = new Expense(datepicker, categoryInput, descriptionInput, Double.parseDouble(amountInput), paymentInput, notesInput); // call the constructor and pass the assgined variables to it
 
-    // add the new expenses to the arrayList
-    expenseList.addExpense(newExpense);
-
+        // add the new expenses to the arrayList
+        expenseList.addExpense(newExpense);
+  }
 
 
 
