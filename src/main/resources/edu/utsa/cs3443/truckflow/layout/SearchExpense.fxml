@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -17,5 +18,6 @@
       <TextField layoutX="89.0" layoutY="423.0" prefHeight="25.0" prefWidth="190.0" promptText="Category" />
       <Button layoutX="26.0" layoutY="860.0" mnemonicParsing="false" text="cancel" />
       <Button layoutX="1472.0" layoutY="848.0" mnemonicParsing="false" text="Search Expense" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1372.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
