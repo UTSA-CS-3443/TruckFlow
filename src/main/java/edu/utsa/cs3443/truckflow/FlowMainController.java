@@ -91,6 +91,29 @@ private boolean clickedButton = false;
         MessageLabel.setText("Hello from delete"); // makes label apperar on the place that we placed it
 
         // if the delete button was clicked again delete a expense of the selected table
+        if (!clickedButton) {
+            clickedButton = true;
+            MessageLabel.setText("Please select a expense record to delete");// makes label apperar on the place that we placed it
+            return;
+        }
+        int selectedExpense = expenseTable.getSelectionModel().getSelectedIndex();
+        if (selectedExpense ==-1){
+            MessageLabel.setText("Please select a expense record to delete");// makes label apperar on the place that we placed it
+            return;
+        }
+        int idTableSelection =idColumn.getCellData(selectedExpense);
+//         delete the expense record
+  // display a message that the expense record was deleted
+        boolean deleted = coordinator.deleteExpense(idTableSelection);
+
+        if (deleted) {
+
+            MessageLabel.setText("Expense successfully deleted!");
+        } else {
+            MessageLabel.setText("Expense ID was not found.");
+        }
+
+
 
 
     }
