@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.utsa.cs3443.truckflow.UpdateExpense"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.UpdateExpensecontroller">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Updating Expense">
+         <font>
+            <Font size="64.0" />
+         </font></Label>
+      <DatePicker fx:id="date" layoutX="151.0" layoutY="193.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="categoryText" layoutX="151.0" layoutY="244.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="descriptionText" layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="amountText" layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="paymentType" layoutX="151.0" layoutY="445.0" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="Notes" layoutX="151.0" layoutY="505.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="222.0" />
+      <Button fx:id="cancel" layoutX="99.0" layoutY="804.0" mnemonicParsing="false" onAction="#onCancelButton" text="cancel" />
+      <Button fx:id="updateExpensebutton" layoutX="1428.0" layoutY="792.0" mnemonicParsing="false" onAction="#onUpdateExpenseClicked" prefHeight="34.0" prefWidth="121.0" text="Update expense" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1389.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>
