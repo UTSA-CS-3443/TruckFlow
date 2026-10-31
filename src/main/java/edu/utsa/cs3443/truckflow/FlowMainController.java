@@ -87,9 +87,7 @@ private boolean clickedButton = false;
 
 
     @FXML
-    public void deleteExpense(){
-        MessageLabel.setText("Hello from delete"); // makes label apperar on the place that we placed it
-
+    public void deleteExpense() throws IOException {
         // if the delete button was clicked again delete a expense of the selected table
         if (!clickedButton) {
             clickedButton = true;
