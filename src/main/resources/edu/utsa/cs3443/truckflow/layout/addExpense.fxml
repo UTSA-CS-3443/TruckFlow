@@ -12,10 +12,10 @@
             <Font size="64.0" />
          </font></Label>
       <Button fx:id="cancel" layoutX="53.0" layoutY="831.0" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel " />
-      <Button fx:id="addExpensebutton" layoutX="1447.0" layoutY="810.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="121.0" text="Add Expense" />
+      <Button fx:id="addExpensebutton" layoutX="1447.0" layoutY="810.0" mnemonicParsing="false" onAction="#onExpenseAdd" prefHeight="34.0" prefWidth="121.0" text="Add Expense" />
       <DatePicker fx:id="date" layoutX="151.0" layoutY="193.0" prefHeight="25.0" prefWidth="222.0" />
       <TextField fx:id="categoryText" layoutX="151.0" layoutY="244.0" prefHeight="25.0" prefWidth="222.0" promptText="Category" />
-      <TextField layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" promptText="Description" />
+      <TextField fx:id="descriptionText" layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" promptText="Description" />
       <TextField fx:id="amountText" layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" promptText="\$Amount" />
       <TextField fx:id="paymentType" layoutX="151.0" layoutY="445.0" prefHeight="25.0" prefWidth="222.0" promptText="Payment Type" />
       <TextField fx:id="Notes" layoutX="151.0" layoutY="505.0" prefHeight="25.0" prefWidth="222.0" promptText="Notes" />
