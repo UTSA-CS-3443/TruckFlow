@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.utsa.cs3443.truckflow.FlowMainController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.FlowMainController">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Searching Screen">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="89.0" layoutY="223.0" prefHeight="25.0" prefWidth="190.0" promptText="Data range start" />
+      <DatePicker layoutX="89.0" layoutY="297.0" prefHeight="25.0" prefWidth="190.0" promptText="Date range end" />
+      <TextField layoutX="89.0" layoutY="364.0" prefHeight="25.0" prefWidth="190.0" promptText="ExpenseID" />
+      <TextField layoutX="89.0" layoutY="423.0" prefHeight="25.0" prefWidth="190.0" promptText="Category" />
+      <Button layoutX="26.0" layoutY="860.0" mnemonicParsing="false" text="cancel" />
+      <Button layoutX="1472.0" layoutY="848.0" mnemonicParsing="false" text="Search Expense" />
+   </children>
 </AnchorPane>
