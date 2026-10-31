@@ -38,8 +38,8 @@ private boolean clickedButton = false;
     @FXML
     private TableView<Expense> expenseTable;
 
-//    @FXML save for later
-//    private TableColumn<Expense, Integer> idColumn;
+    @FXML //save for later
+    private TableColumn<Expense, Integer> idColumn;
 
     @FXML
     private TableColumn<Expense, LocalDate> dateColumn;
