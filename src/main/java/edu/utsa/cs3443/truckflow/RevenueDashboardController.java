@@ -62,6 +62,8 @@ private boolean clickedButton = false;
 
     @FXML
     private ImageView revenueDB;
+    @FXML
+    private Label RevenueLabel;
 
 //    private LocalDate date;
 //    private String Broker_name;
