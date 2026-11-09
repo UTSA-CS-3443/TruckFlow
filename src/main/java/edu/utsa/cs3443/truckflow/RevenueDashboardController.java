@@ -214,5 +214,15 @@ private boolean clickedButton = false;
 //
 //        return false;
 //    }
+public void onLabelClick(MouseEvent event)throws IOException{
+    FXMLLoader fxmlLoader = new FXMLLoader(
+            TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/MainMenuScreen.fxml"));
+
+    Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
+
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(scene);
+    stage.setTitle("Main Menu");
+}
 
 }
