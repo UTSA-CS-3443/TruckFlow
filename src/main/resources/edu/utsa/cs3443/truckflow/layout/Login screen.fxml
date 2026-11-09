@@ -3,13 +3,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.LoginCOntroller">
    <children>
-      <ImageView fx:id="addimage" fitHeight="174.0" fitWidth="300.0" layoutX="610.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="loginIndicatorLabel" layoutX="532.0" layoutY="315.0" prefHeight="17.0" prefWidth="406.0" />
+      <ImageView fx:id="addimage" fitHeight="174.0" fitWidth="320.0" layoutX="610.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="loginIndicatorLabel" layoutX="600.0" layoutY="475.0" prefHeight="17.0" prefWidth="406.0" />
       <TextField fx:id="UserText" layoutX="540.0" layoutY="340.0" prefHeight="45.0" prefWidth="400.0" />
       <TextField fx:id="passwordText" layoutX="537.0" layoutY="425.0" prefHeight="45.0" prefWidth="413.0" />
-      <Button fx:id="login" layoutX="725.0" layoutY="527.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" />
+      <Button fx:id="login" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" />
+      <Label layoutX="550.0" layoutY="290.0" prefHeight="17.0" prefWidth="400.0" text="Welcome to TruckFlow Please Login">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
