@@ -52,7 +52,7 @@
                   <TableColumn fx:id="Notes" prefWidth="205.0" text="Notes" />
               </columns>
             </TableView>
-            <Label layoutX="74.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="808.0" text="Expense Dashboard">
+            <Label fx:id="ExpenseLabel" layoutX="74.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onLabelClick" prefHeight="88.0" prefWidth="808.0" text="Expense Dashboard">
                <font>
                   <Font size="64.0" />
                </font>

@@ -52,7 +52,7 @@
                   <TableColumn fx:id="Price_per_mile" prefWidth="190.0" text="Price Per Mile" />
               </columns>
             </TableView>
-            <Label layoutX="74.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="808.0" text="Revenue Dashboard">
+            <Label fx:id="RevenueLabel" layoutX="74.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onLabelClick" prefHeight="88.0" prefWidth="808.0" text="Revenue Dashboard">
                <font>
                   <Font size="64.0" />
                </font>
