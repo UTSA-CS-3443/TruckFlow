@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.addRevenueController">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Add Revenue">
+         <font>
+            <Font size="64.0" />
+         </font></Label>
+      <Button fx:id="cancel" layoutX="53.0" layoutY="831.0" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel " />
+      <Button fx:id="addRevenueButton" layoutX="1447.0" layoutY="810.0" mnemonicParsing="false" onAction="#onRevenueAdd" prefHeight="34.0" prefWidth="121.0" text="Add Expense" />
+      <DatePicker fx:id="date" layoutX="151.0" layoutY="193.0" prefHeight="25.0" prefWidth="222.0" promptText="date" />
+      <TextField fx:id="BrokerName" layoutX="151.0" layoutY="244.0" prefHeight="25.0" prefWidth="222.0" promptText="Broker Name" />
+      <TextField fx:id="amountPaidField" layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" promptText="amount Paid" />
+      <TextField fx:id="DeadHeadMiles" layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" promptText="Dead Head" />
+      <TextField fx:id="PriceperMile" layoutX="151.0" layoutY="505.0" prefHeight="25.0" prefWidth="222.0" promptText="Price per Mile" />
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <CheckBox fx:id="paidcheck" layoutX="151.0" layoutY="440.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="222.0" text="Paid" />
+      <Label fx:id="errorLabel" layoutX="151.0" layoutY="719.0" prefHeight="17.0" prefWidth="460.0" />
+   </children>
+</AnchorPane>

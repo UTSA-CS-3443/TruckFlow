@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.searchRevenueController">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Search Revenue">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateRange1" layoutX="89.0" layoutY="223.0" prefHeight="25.0" prefWidth="190.0" promptText="Data range start" />
+      <DatePicker fx:id="dateRange2" layoutX="89.0" layoutY="297.0" prefHeight="25.0" prefWidth="190.0" promptText="Date range end" />
+      <TextField fx:id="expenseID" layoutX="89.0" layoutY="364.0" prefHeight="25.0" prefWidth="190.0" promptText="ExpenseID" />
+      <TextField fx:id="categoryText" layoutX="89.0" layoutY="423.0" prefHeight="25.0" prefWidth="190.0" promptText="Category" />
+      <Button fx:id="cancelButton" layoutX="26.0" layoutY="860.0" mnemonicParsing="false" onAction="#CancelButtonClick" text="cancel" />
+      <Button fx:id="searchRecordButton" layoutX="1472.0" layoutY="848.0" mnemonicParsing="false" onAction="#onSearchRecordButton" text="Search Expense" />
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1372.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

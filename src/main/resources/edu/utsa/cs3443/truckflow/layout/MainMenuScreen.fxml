@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.LoginCOntroller">
+   <children>
+      <Button fx:id="Expenses" layoutX="450.0" layoutY="250.0" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="50.0" prefWidth="200.0" text="Expenses" />
+      <Button fx:id="Revenue" layoutX="850.0" layoutY="250.0" mnemonicParsing="false" onAction="#onRevenueButton" prefHeight="55.0" prefWidth="200.0" text="Revenue" />
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="642.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

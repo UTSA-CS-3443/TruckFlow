@@ -1,10 +1,21 @@
 package edu.utsa.cs3443.truckflow;
 
+import edu.utsa.cs3443.truckflow.model.Expense;
+import edu.utsa.cs3443.truckflow.model.ExpenseManager;
+import edu.utsa.cs3443.truckflow.model.Revenue;
+import edu.utsa.cs3443.truckflow.model.dataManager;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class UpdateExpensecontroller {
 
@@ -28,35 +39,31 @@ public class UpdateExpensecontroller {
     @FXML
     private Label errorLabel;
 
+    private Expense selectedExpense;
+
+    private dataManager data= new dataManager();
+    private ExpenseManager expense = new ExpenseManager(data, data.getExpense());
+    @FXML
+    private ImageView addimage;
+
+    public void initialize() throws IOException{
+        Image updateScreen = new Image(getClass().getResource("/edu/utsa/cs3443/truckflow/images/editScreen.png").toExternalForm());
+        addimage.setImage(updateScreen);
+
+    }
+
+    public void setExpenses(Expense expense, dataManager manager) {
+        this.selectedExpense = expense;
+        this.data = manager;
+
+        this.expense = new ExpenseManager(data, data.getExpense());
+
+        // use getters to populate feilds on the fields for the screen
+
+    }
 
 
-
-public void setExpenses(Expense expense){
-    // use getters to populate feilds on the fields for the screen
-    date.setValue(expense.getDate());
-    categoryText.setText(expense.getCategory());
-    descriptionText.setText(expense.getDescription());
-    amountText.setText(String.valueOf(expense.getAmount()));
-    paymentType.setText(expense.getPayment_Method());
-    Notes.setText(expense.getNotes());
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void onCancelButton()throws IOException {
+    public void onCancelButton() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/expenseDashboard.fxml"));
 
@@ -98,10 +105,18 @@ public void setExpenses(Expense expense){
             selectedExpense.setNotes(Notes.getText());
 
             // Save the updated expenses
-            expenseList.updateExpense(selectedExpense);
+            expense.updateExpense(selectedExpense);
+            // add a label to know user that the expense has been updated here and then call the method
+            switchUpdateScreen();
 
 
 
+        } catch (NumberFormatException e) {
+            errorLabel.setText("Please enter a valid amount.");
+        } catch (IOException e) {
+            errorLabel.setText("Unable to save the updated expense.");
+            e.printStackTrace();
+        }
     }
 
     private void switchUpdateScreen()throws IOException{

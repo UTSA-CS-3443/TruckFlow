@@ -16,7 +16,7 @@ public class Revenue {
     private static int nextID = 1; // variable for creating a ID for each expense
 
 
-    public Revenue(LocalDate date, int revenueID, String broker_name, Double amount_paid, int deadheadMiles, Boolean payment_status, Double price_per_mile) {
+    public Revenue(LocalDate date, String broker_name, Double amount_paid, int deadheadMiles, Boolean payment_status, Double price_per_mile) {
         this.date = date;
         RevenueID = nextID++;
         Broker_name = broker_name;
@@ -83,18 +83,11 @@ public class Revenue {
         Price_per_mile = price_per_mile;
     }
 
-
     @Override
     public String toString() {
-        return "Revenue{" +
-                "date=" + date +
-                ", RevenueID=" + RevenueID +
-                ", Broker_name='" + Broker_name + '\'' +
-                ", Amount_paid=" + Amount_paid +
-                ", DeadheadMiles=" + DeadheadMiles +
-                ", Payment_status=" + Payment_status +
-                ", Price_per_mile=" + Price_per_mile +
-                '}';
+        return date + "," + Broker_name + "," +
+                Amount_paid + "," + DeadheadMiles + "," +
+                Payment_status + "," + Price_per_mile;
     }
 
 

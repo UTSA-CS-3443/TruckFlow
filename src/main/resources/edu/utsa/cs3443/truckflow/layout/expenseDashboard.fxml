@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -42,7 +43,7 @@
       <children>
             <TableView fx:id="expenseTable" layoutX="74.0" layoutY="155.0" prefHeight="596.0" prefWidth="1227.0">
               <columns>
-                  <TableColumn prefWidth="205.0" text="Expense ID " />
+                  <TableColumn fx:id="idColumn" prefWidth="205.0" text="Expense ID " />
                 <TableColumn fx:id="dateColumn" prefWidth="205.0" text="Date" />
                 <TableColumn fx:id="categoryColumn" prefWidth="205.0" text="Category" />
                   <TableColumn fx:id="descriptionColumn" prefWidth="205.0" text="Description" />
@@ -57,14 +58,15 @@
                </font>
             </Label>
             <Button fx:id="addbutton" layoutX="714.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddbuttonClick" prefHeight="32.0" prefWidth="114.0" text="add " />
-            <Button fx:id="editbutton" layoutX="894.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="32.0" prefWidth="114.0" text="edit icon( update)" />
+            <Button fx:id="editbutton" layoutX="894.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editExpense" prefHeight="32.0" prefWidth="114.0" text="edit icon( update)" />
             <Button fx:id="deletebutton" layoutX="1064.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteExpense" prefHeight="32.0" prefWidth="114.0" text="delete Icon( delete) " />
             <Button fx:id="SearchButton" layoutX="1174.0" layoutY="12.0" mnemonicParsing="false" onAction="#onSearchButtonCLick" prefHeight="32.0" prefWidth="114.0" text="Search Icon" />
-            <Label fx:id="MessageLabel" layoutX="85.0" layoutY="766.0" prefHeight="27.0" prefWidth="339.0" visible="true">
+            <Label fx:id="MessageLabel" layoutX="85.0" layoutY="766.0" prefHeight="27.0" prefWidth="704.0" visible="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1400.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
 
       </children>
     </AnchorPane>

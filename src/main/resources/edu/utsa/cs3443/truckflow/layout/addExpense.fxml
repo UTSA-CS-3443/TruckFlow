@@ -19,6 +19,7 @@
       <TextField fx:id="amountText" layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" promptText="\$Amount" />
       <TextField fx:id="paymentType" layoutX="151.0" layoutY="445.0" prefHeight="25.0" prefWidth="222.0" promptText="Payment Type" />
       <TextField fx:id="Notes" layoutX="151.0" layoutY="505.0" prefHeight="25.0" prefWidth="222.0" promptText="Notes" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="errorLabel" layoutX="137.0" layoutY="725.0" prefHeight="17.0" prefWidth="478.0" />
    </children>
 </AnchorPane>

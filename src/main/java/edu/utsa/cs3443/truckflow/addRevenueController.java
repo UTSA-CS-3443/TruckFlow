@@ -1,13 +1,15 @@
 package edu.utsa.cs3443.truckflow;
 
-import edu.utsa.cs3443.truckflow.model.Expense;
+import edu.utsa.cs3443.truckflow.model.ExpenseManager;
 import edu.utsa.cs3443.truckflow.model.Revenue;
-import edu.utsa.cs3443.truckflow.model.expenseManager;
-import edu.utsa.cs3443.truckflow.model.revenueManager;
+import edu.utsa.cs3443.truckflow.model.RevenueManager;
+import edu.utsa.cs3443.truckflow.model.dataManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,19 +40,24 @@ public class addRevenueController {
 
     @FXML
     private Label errorLabel;
+    @FXML
+    private ImageView addimage;
 
-    private revenueManager revenueList= new revenueManager();
+    private dataManager data= new dataManager();
+    private RevenueManager revenue = new RevenueManager(data, data.getRevenue());
 
 
     // method for cancel button to go back to the ExpenseDashboard.fxml
     public void initialize() throws IOException {
-        revenueList.loadExpenses();
+        Image addScreen = new Image(getClass().getResource("/edu/utsa/cs3443/truckflow/images/AddScreens.png").toExternalForm());
+        addimage.setImage(addScreen);
+        data.loadRevenue();
 
 }
 
     public void onCancelButton()throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/expenseDashboard.fxml"));
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/RevenueDashboard.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
 
@@ -68,8 +75,6 @@ public void onRevenueAdd() throws IOException {
     int deadheadMilesInput = Integer.parseInt(DeadHeadMiles.getText());
     Boolean paymentStatus = paidcheck.isSelected();
     Double pricePerMile = Double.parseDouble(PriceperMile.getText());
-
-
 
 
     // assgin variables to input feilds
@@ -95,7 +100,7 @@ errorLabel.setText("Please enter a date");
       Revenue newRevenue = new Revenue(datepicker, brokerInput, amountInput, deadheadMilesInput, paymentStatus, pricePerMile); // call the constructor and pass the assgined variables to it
 
         // add the new expenses to the arrayList
-      revenueList.addRevenue(newRevenue);
+      revenue.addRevenue(newRevenue);
       addedRevenueClicked();
   }
 
@@ -105,7 +110,7 @@ errorLabel.setText("Please enter a date");
 private void addedRevenueClicked()throws IOException{
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/expenseDashboard.fxml"));
+                TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/RevenueDashboard.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1600, 914);
 
@@ -114,9 +119,5 @@ private void addedRevenueClicked()throws IOException{
         stage.setTitle("Expense Dashboard");
 
 }
-
-
-
-
 
     }
