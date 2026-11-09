@@ -67,6 +67,9 @@ private boolean clickedButton = false;
     private ImageView addimage;
 
     @FXML
+    private Label ExpenseLabel;
+
+    @FXML
     public void initialize() throws IOException {
 
         Image addScreen = new Image(getClass().getResource("/edu/utsa/cs3443/truckflow/images/ExpenseDashb.png").toExternalForm());
