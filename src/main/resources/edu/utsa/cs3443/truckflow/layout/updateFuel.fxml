@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.UpdateFuelController">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Updating Fuel">
+         <font>
+            <Font size="64.0" />
+         </font></Label>
+      <Button fx:id="cancel" layoutX="53.0" layoutY="831.0" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel " />
+      <Button fx:id="updateFuelbutton" layoutX="1447.0" layoutY="810.0" mnemonicParsing="false" onAction="#onUpdateFuelClicked" prefHeight="34.0" prefWidth="121.0" text="Update Fuel" />
+      <DatePicker fx:id="date" layoutX="151.0" layoutY="193.0" prefHeight="25.0" prefWidth="222.0" promptText="Date" />
+      <TextField fx:id="stationText" layoutX="151.0" layoutY="244.0" prefHeight="25.0" prefWidth="222.0" promptText="Fuel station name" />
+      <TextField fx:id="priceText" layoutX="151.0" layoutY="310.0" prefHeight="25.0" prefWidth="222.0" promptText="Price per gallon ($)" />
+      <TextField fx:id="gallonsText" layoutX="151.0" layoutY="374.0" prefHeight="25.0" prefWidth="222.0" promptText="Total gallons" />
+      <TextField fx:id="totalCostText" layoutX="151.0" layoutY="445.0" prefHeight="25.0" prefWidth="222.0" promptText="Total cost ($) - optional" />
+      <Label layoutX="151.0" layoutY="480.0" text="Leave Total cost empty to calculate it (price x gallons).">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="errorLabel" layoutX="137.0" layoutY="725.0" prefHeight="17.0" prefWidth="900.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.FuelDashboardController">
+  <children>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1600.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TableView fx:id="fuelTable" layoutX="74.0" layoutY="155.0" prefHeight="596.0" prefWidth="1227.0">
+              <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="150.0" text="Fuel ID" />
+                  <TableColumn fx:id="dateColumn" prefWidth="205.0" text="Date" />
+                  <TableColumn fx:id="stationColumn" prefWidth="342.0" text="Fuel Station" />
+                  <TableColumn fx:id="priceColumn" prefWidth="170.0" text="Price per Gallon" />
+                  <TableColumn fx:id="gallonsColumn" prefWidth="170.0" text="Total Gallons" />
+                  <TableColumn fx:id="totalColumn" prefWidth="190.0" text="Total Cost" />
+              </columns>
+            </TableView>
+            <Label fx:id="FuelLabel" layoutX="74.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onLabelClick" prefHeight="88.0" prefWidth="808.0" text="Fuel Dashboard">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Button fx:id="addbutton" layoutX="714.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddbuttonClick" prefHeight="32.0" prefWidth="114.0" text="Add" />
+            <Button fx:id="editbutton" layoutX="894.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editFuel" prefHeight="32.0" prefWidth="114.0" text="Edit" />
+            <Button fx:id="deletebutton" layoutX="1064.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteFuel" prefHeight="32.0" prefWidth="114.0" text="Delete" />
+            <Button fx:id="SearchButton" layoutX="1174.0" layoutY="12.0" mnemonicParsing="false" onAction="#onSearchButtonCLick" prefHeight="32.0" prefWidth="114.0" text="Search" />
+            <Button fx:id="showAllButton" layoutX="1034.0" layoutY="12.0" mnemonicParsing="false" onAction="#onShowAllClick" prefHeight="32.0" prefWidth="114.0" text="Show All" />
+            <Label fx:id="MessageLabel" layoutX="85.0" layoutY="766.0" prefHeight="27.0" prefWidth="1200.0" visible="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="summaryLabel" layoutX="85.0" layoutY="815.0" prefHeight="27.0" prefWidth="1250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1400.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

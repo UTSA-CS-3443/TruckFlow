@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="914.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.truckflow.SearchFuelController">
+   <children>
+      <Label layoutX="105.0" layoutY="55.0" text="Searching Fuel">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateRange1" layoutX="89.0" layoutY="223.0" prefHeight="25.0" prefWidth="190.0" promptText="Date range start" />
+      <DatePicker fx:id="dateRange2" layoutX="89.0" layoutY="297.0" prefHeight="25.0" prefWidth="190.0" promptText="Date range end" />
+      <TextField fx:id="fuelID" layoutX="89.0" layoutY="364.0" prefHeight="25.0" prefWidth="190.0" promptText="Fuel ID" />
+      <TextField fx:id="stationText" layoutX="89.0" layoutY="423.0" prefHeight="25.0" prefWidth="190.0" promptText="Fuel station name" />
+      <Label layoutX="89.0" layoutY="460.0" text="Fill in one or more boxes. For a single day, use the same date twice.">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="26.0" layoutY="860.0" mnemonicParsing="false" onAction="#CancelButtonClick" text="cancel" />
+      <Button fx:id="searchRecordButton" layoutX="1472.0" layoutY="848.0" mnemonicParsing="false" onAction="#onSearchRecordButton" text="Search Fuel" />
+      <ImageView fx:id="addimage" fitHeight="150.0" fitWidth="200.0" layoutX="1372.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="errorLabel" layoutX="89.0" layoutY="760.0" prefHeight="17.0" prefWidth="900.0" />
+   </children>
+</AnchorPane>
