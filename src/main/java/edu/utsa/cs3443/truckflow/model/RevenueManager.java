@@ -8,6 +8,7 @@ public class RevenueManager implements ProfitLossReport{
     private dataManager dataManager;
 
     private ArrayList<Revenue> revenue = new ArrayList<>();
+    private ArrayList<Expense> expense = new ArrayList<>();
 
 
     public RevenueManager(dataManager dataManager, ArrayList<Revenue> revenue) {
