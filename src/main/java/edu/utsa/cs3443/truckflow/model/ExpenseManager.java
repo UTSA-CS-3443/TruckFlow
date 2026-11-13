@@ -44,8 +44,22 @@ public class ExpenseManager {
         return false;
     }
     // update expense(FIX THIS !!)
-    public void updateExpense(Expense expense)throws  IOException{
-        if(this.expense.contains(expense)){
+    public boolean updateExpense(Expense expense,LocalDate date,String category,String description,double Amount,String payment_Method,
+                              String Notes)throws  IOException{
+
+
+        LocalDate olddata = expense.getDate();
+        String oldCategory = expense.getCategory();
+        String oldDescription = expense.getDescription();
+        double oldAmount = expense.getAmount();
+        String oldpaymentMethod = expense.getPayment_Method();
+        String oldNotes = expense.getNotes();
+        try{
+            expense.setDate(date);
+            expense.setCategory(category);
+            expense.setDescription(description);
+            expense.setPayment_Method(payment_Method);
+            expense.setNotes(Notes);
             dataManager.saveDataToFile();
         }
     }
