@@ -96,16 +96,22 @@ public class UpdateExpensecontroller {
             return;
         }
         try {
-            // Update the existing Expense object
-            selectedExpense.setDate(date.getValue());
-            selectedExpense.setCategory(categoryText.getText());
-            selectedExpense.setDescription(descriptionText.getText());
-            selectedExpense.setAmount(Double.parseDouble(amountText.getText()));
-            selectedExpense.setPayment_Method(paymentType.getText());
-            selectedExpense.setNotes(Notes.getText());
+            LocalDate datepicker = date.getValue();
+            if (datepicker == null) {
+                throw new IllegalArgumentException("Please enter a valid date.");
+            }
+
 
             // Save the updated expenses
-            expense.updateExpense(selectedExpense);
+            double amount = Double.parseDouble(amountText.getText().trim());
+            String notes = (Notes != null) ?Notes.getText() : "";
+
+            // Save the updated expenses
+            if (!expense.updateExpense(selectedExpense, datepicker, categoryText.getText(),
+                    descriptionText.getText(), amount, paymentType.getText(), notes)) {
+                errorLabel.setText("That expense record could not be found. Go back and select it again.");
+                return;
+            }
             // add a label to know user that the expense has been updated here and then call the method
             switchUpdateScreen();
 
