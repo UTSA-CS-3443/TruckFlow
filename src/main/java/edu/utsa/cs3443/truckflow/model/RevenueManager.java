@@ -24,8 +24,11 @@ public class RevenueManager implements ProfitLossReport{
 
     @Override
     public double CalculateTotalRevenue() {
-
-        return 0;
+        double totalRevenue = 0;
+        for(Revenue total:revenue){
+            totalRevenue+=total.getAmount_paid();
+        }
+        return totalRevenue;
     }
 
     @Override
