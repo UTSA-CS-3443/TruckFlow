@@ -33,7 +33,10 @@ public class RevenueManager implements ProfitLossReport{
 
     @Override
     public double calculateTotalExpenses() {
-
+    double totalExpenses = 0;
+        for(Expense expenses: expense){
+            totalExpenses += expenses.getAmount();
+        }
         return 0;
     }
 
