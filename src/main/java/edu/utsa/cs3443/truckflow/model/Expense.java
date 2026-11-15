@@ -19,8 +19,8 @@ public class Expense {
     // constructor
 
 
-    public Expense(LocalDate date, String category, String description, Double amount, String payment_Method, String notes) {
-        this.expenseId = nextID++;
+    public Expense(int expenseId,LocalDate date, String category, String description, Double amount, String payment_Method, String notes) {
+        this.expenseId = expenseId;
         this.date = date;
         this.Category = category;
         this.Description = description;

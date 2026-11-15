@@ -14,7 +14,7 @@ public class dataManager {
     // attribute an arrayList
     private ArrayList<Expense> expense = new ArrayList<>();
     private ArrayList<Revenue> revenue = new ArrayList<>();
-
+    private ArrayList<Fuel> fuel = new ArrayList<>();
 
     // defauly constructor
     public dataManager() {
@@ -42,10 +42,9 @@ public class dataManager {
         this.revenue = revenue;
     }
 
-
-
-
-
+    public ArrayList<Fuel> getFuel() {
+        return fuel;
+    }
 
     public  void loadExpenses() throws IOException {
 
@@ -59,6 +58,7 @@ public class dataManager {
         if (scan.hasNextLine()) {
             scan.nextLine(); // Skip header
         }
+        int expenseid =0;
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] expenseData = line.split(",", -1);
@@ -71,6 +71,7 @@ public class dataManager {
                 continue;
             }
             Expense newExpense = new Expense(
+                    ++expenseid,
                     LocalDate.parse(expenseData[0], formatter), // Date
                     expenseData[1],                             // Category
                     expenseData[2],                             // Description

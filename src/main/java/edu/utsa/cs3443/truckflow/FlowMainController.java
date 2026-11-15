@@ -6,17 +6,17 @@ import edu.utsa.cs3443.truckflow.model.dataManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
+import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -69,14 +69,16 @@ private boolean clickedButton = false;
     @FXML
     private Label ExpenseLabel;
 
+
     @FXML
     public void initialize() throws IOException {
 
         Image addScreen = new Image(getClass().getResource("/edu/utsa/cs3443/truckflow/images/ExpenseDashb.png").toExternalForm());
         addimage.setImage(addScreen);
 
-        idColumn.setCellValueFactory(
-                new PropertyValueFactory<>("expenseId"));
+                idColumn.setCellValueFactory(
+                        new PropertyValueFactory<>("expenseId"));
+
         dateColumn.setCellValueFactory(
                 new PropertyValueFactory<>("date"));
 
@@ -95,13 +97,15 @@ private boolean clickedButton = false;
         Notes.setCellValueFactory(
                 new PropertyValueFactory<>("notes"));
 
-        data.loadExpenses();
-        System.out.println("Expenses loaded: "
-                + data.getExpense().size());
+    data.loadExpenses();
+    System.out.println("Expenses loaded: "
+            + data.getExpense().size());
+
+
+
 
         expenseTable.getItems().setAll(data.getExpense());
-
-
+        expenseTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
 
@@ -214,11 +218,30 @@ private boolean clickedButton = false;
                 return true;
             }
         }
-
         MessageLabel.setText("Expense was not found");
         return false;
     }
+    public void returnedMultipleSearchResults(ArrayList<Expense> foundExpenses) {
 
+        expenseTable.getSelectionModel().clearSelection();
+
+        for (Expense found : foundExpenses) {
+
+            for (int i = 0; i < expenseTable.getItems().size(); i++) {
+
+                Expense current = expenseTable.getItems().get(i);
+
+                if (current.getExpenseId() == found.getExpenseId()) {
+
+                    expenseTable.getSelectionModel().select(i);
+                    expenseTable.scrollTo(i);
+                    break;
+                }
+            }
+        }
+
+        expenseTable.requestFocus();
+    }
     public void onLabelClick(MouseEvent event)throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(
                 TruckFlow.class.getResource("/edu/utsa/cs3443/truckflow/layout/MainMenuScreen.fxml"));

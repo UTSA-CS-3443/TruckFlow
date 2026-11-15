@@ -43,7 +43,7 @@ public class ExpenseManager {
         }
         return false;
     }
-    // update expense(FIX THIS !!)
+
     public boolean updateExpense(Expense expense,LocalDate date,String category,String description,double Amount,String payment_Method,
                               String Notes)throws  IOException{
 
@@ -58,21 +58,43 @@ public class ExpenseManager {
             expense.setDate(date);
             expense.setCategory(category);
             expense.setDescription(description);
+            expense.setAmount(Amount);
             expense.setPayment_Method(payment_Method);
             expense.setNotes(Notes);
+
             dataManager.saveDataToFile();
+            return true;
+        }catch (IllegalArgumentException | IOException e){
+            expense.setDate(olddata);
+            expense.setCategory(oldCategory);
+            expense.setDescription(oldDescription);
+            expense.setAmount(oldAmount);
+            expense.setPayment_Method(oldpaymentMethod);
+            expense.setNotes(oldNotes);
+            throw e;
         }
+
     }
+    public double addExpensesCost(){
+        double total =0;
+        for(Expense expenses: expense){
+            total += expenses.getAmount();
+        }
+        return total;
+
+    }
+
     //filter by date range methods
-    public Expense filterByDateRange(LocalDate datepicker1, LocalDate datepicker2){                                            // look into fixing the type of method it calls because its going to print alot
+    public ArrayList<Expense> filterByDateRange(LocalDate datepicker1, LocalDate datepicker2){                                            // look into fixing the type of method it calls because its going to print alot
         // filter by date range
+        ArrayList<Expense> foundExpenses = new ArrayList<>();
         for (Expense date : this.expense) {
             if (!date.getDate().isBefore(datepicker1) && !date.getDate().isAfter(datepicker2)) {
                 // Print the matching expense here
-                return date;
+                foundExpenses.add(date);
             }
         }
-        return null;
+        return foundExpenses;
     }
     public Expense filterByCategory(String categoryInput)throws IOException{        // look into fixing the type of method it calls because its going to print alot
         for(int i = 0; i< this.expense.size();i++){
