@@ -196,20 +196,26 @@ private boolean clickedButton = false;
         stage.setTitle("Search Expense screen");
     }
 
-    public boolean returnedSearchResult(Expense foundExpense){
-        if(foundExpense !=null){
-            // return a selected row as a result
-             expenseTable.getSelectionModel().select(foundExpense);
-             expenseTable.scrollTo(foundExpense);
-             MessageLabel.setText("Expense was found");
-             System.out.println("Found");
-        }
-        else{
-            MessageLabel.setText("Expense was not found ");
-            System.out.println("NotFound");
+    public boolean returnedSearchResult(Expense foundExpense) {
 
+        // displays a message saying that expense was not found
+        if (foundExpense == null) {
+            MessageLabel.setText("Expense was not found");
+            return false;
+        }
+        // for loop helps on highlghting the expense
+        for (Expense e : expenseTable.getItems()) {// first it iterates through the expense table
+            if (e.getExpenseId() == foundExpense.getExpenseId()) { // takes the expense ID that we are looking for with the id that we are loojing for
+                int index = expenseTable.getItems().indexOf(e); // store the index
+                expenseTable.getSelectionModel().clearAndSelect(index); // selects the table
+                expenseTable.scrollTo(index); // scrolls to the table index
+                expenseTable.requestFocus();
+                MessageLabel.setText("Expense was found");
+                return true;
+            }
         }
 
+        MessageLabel.setText("Expense was not found");
         return false;
     }
 
